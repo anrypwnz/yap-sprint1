@@ -1,0 +1,24 @@
+{
+  "name": "yap-sprint1",
+  "version": "1.0.0",
+  "description": "Yandex Praktikum sprint1 (chat)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anrypwnz/yap-sprint1.git"
+  },
+  "keywords": [],
+  "author": "anrypwnz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anrypwnz/yap-sprint1/issues"
+  },
+  "homepage": "https://github.com/anrypwnz/yap-sprint1#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
