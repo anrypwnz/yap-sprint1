@@ -4,7 +4,10 @@
   "description": "Yandex Praktikum sprint1 (chat)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm dist/bundle.js",
+    "start": "parcel static/index.html",
+    "build-prod": "parcel build static/index.html",
+    "deploy": "deploy -d dist"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,7 @@
   "homepage": "https://github.com/anrypwnz/yap-sprint1#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "parcel-bundler": "^1.12.5",
     "path": "^0.12.7"
   }
 }
