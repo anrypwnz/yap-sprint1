@@ -21,6 +21,10 @@ To create a production build:
 npm run build-prod
 ```
 
+Template:
+
+[Figma link](https://www.figma.com/file/H7CIfrutC5DFySj0a1hj77/colloquy-chat)
+
 ## Running
 
 Open the file `dist/index.html` in your browser
