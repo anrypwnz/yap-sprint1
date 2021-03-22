@@ -11,23 +11,50 @@ body {
   font-weight: 500;
 }
 
+input {
+  background-color: #1B2E42;
+  border: none;
+  outline: none;
+  color: @font-color;
+  padding: 5px;
+
+  &-webkit-autofill {
+    background-color: #999999;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #FFFAFA;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 .root {
   max-width: 1280px;
   min-height: 80vh;
   display: flex;
   justify-content: center;
+  margin: auto;
 }
 
 .main {
   display: grid;
   grid-template-columns: 1fr 3fr;
   align-self: auto;
-  border: 1px solid @ligthgray;
+  border: 1px solid @lightgray;
   border-radius: 5px;
 }
 
 .sidebar {
-  border-right: 1px solid @ligthgray;
+  border-right: 1px solid @lightgray;
   width: 320px;
   padding: 10px;
 }
@@ -36,8 +63,9 @@ body {
   padding: 14px 0;
   display: flex;
   flex-flow: column;
-  border-bottom: 1px solid @ligthgray;
-   &__btn {
+  border-bottom: 1px solid @lightgray;
+
+  &__btn {
     color: @gray;
     font-size: 12px;
     //TODO add font 500
@@ -45,40 +73,33 @@ body {
     align-self: flex-end;
     padding: 14px 0;
     cursor: pointer;
-   }
-   &__search {
-     border-radius: 5px;
-   }
+  }
+
+  &__search {
+    border-radius: 5px;
+  }
 }
 
 .cell {
   display: flex;
   justify-content: space-between;
   padding: 12px 0;
-  border-bottom: 1px solid @ligthgray;
-  
-  &__avatar {
-    width: 47px;
-    height: 47px;
-    border-radius: 50px;
-    background-color: @darkblue;
-  }
+  border-bottom: 1px solid @lightgray;
+  align-items: center;
 
-  &__text{
+  &__text {
     display: flex;
     flex-flow: column;
     margin-left: 10px;
     margin-right: 15px;
     max-width: 193px;
   }
-  &__name {
-    font-size: 13px;
-    margin-bottom: 5px;
-  }
+
   &__paragraph {
     color: @gray;
     font-size: 12px;
   }
+
   &__time {
     font-size: 10px;
     color: @gray;
@@ -119,47 +140,265 @@ body {
     border-bottom: 1px solid @lightblue;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
+    padding-bottom: 10px;
   }
 
-  &__chatfield {
+  &__chat {
     display: flex;
     flex-flow: column;
     width: 100%;
     height: 100%;
+    padding-top: 12px;
   }
 
   &__msg-panel {
     border-top: 1px solid @lightblue;
     width: 100%;
-    padding: 10px 0;
+    padding: 15px 0 5px 0;
     display: flex;
     justify-content: space-between;
   }
 
 }
 
-.msg-panel{
-  &__search {
-    width: 80%;
-    border-radius: 30px;
-    margin: 0 10px;
+.info-panel {
+  &__card {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+
+    p {
+      margin-left: 10px;
+    }
+  }
+
+  &__avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50px;
+    background-color: @darkblue;
+  }
+
+  &__name {
+    margin-left: 10px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    min-width: 200px;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    z-index: 5;
+    background-color: #1B2E42;
+    border-radius: 12px;
+    border: 1px solid @lightgray;
+
+    &_icon {
+      border: 2px solid @lightblue;
+      border-radius: 50px;
+      padding: 3px;
+      margin-right: 6px;
+    }
+  }
+
+  &__menu-btn {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
   }
 }
 
+.msg-panel {
+  &__search {
+    width: 88%;
+    border-radius: 30px;
+    margin: 0 10px;
+  }
 
-// btns inputs
+  &__add-file {
+    position: relative;
+  }
+}
 
+// modal window send file
+.modal-options {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  min-width: 160px;
+  position: absolute;
+  bottom: 65px;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid @lightgray;
+  color: @font-color;
+  background-color: @darkblue;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  z-index: 5;
+
+  &__point {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+// chat options
+.chat {
+  &__wrap {
+    padding: 12px;
+    border-radius: 12px;
+    width: 50%;
+    margin-bottom: 12px;
+
+    &_get {
+      background-color: #2B5278;
+      border-top-left-radius: 0;
+    }
+
+    &_send {
+      background-color: #1067BC;
+      align-self: flex-end;
+      border-bottom-right-radius: 0;
+    }
+
+    &_date {
+      color: @gray;
+      align-self: center;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+// btns, inputs
 .input {
   &__search {
     border: none;
-    background-color:@darkblue;
+    background-color: @darkblue;
     color: @font-color;
     outline: none;
     padding: 10px;
+
     &::placeholder {
       color: @gray;
       font-weight: 500;
     }
+
+    &:focus {
+      box-shadow: 0 0 5px rgb(0, 100, 179);
+    }
   }
 }
+
+.button {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+// user badge
+.badge {
+  &__name {
+    font-size: 13px;
+    margin: 4px 0;
+  }
+
+  &__avatar {
+    width: 47px;
+    height: 47px;
+    border-radius: 50px;
+    background-color: @darkblue;
+  }
+}
+
+//login-page > form
+.form {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  width: 100%;
+
+  &-wrap {
+    border-radius: 12px;
+    border: 1px solid @lightgray;
+    min-width: 320px;
+    padding: 30px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+  }
+
+  &-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &-label {
+    font-size: 11px;
+    color: @gray;
+    position: absolute;
+    top: -10px;
+    left: 5px;
+  }
+
+  &-input {
+    border-bottom: 1px solid @lightblue;
+    width: 97%;
+
+    &::placeholder {
+      color: @gray;
+    }
+  }
+
+  &-btn {
+    &-submit {
+      padding: 12px;
+      background-color: @lightblue;
+      border-radius: 8px;
+    }
+
+    &-option {
+      background-color: transparent;
+      color: @lightblue;
+      margin-top: 20px;
+    }
+  }
+  &-error {
+    color: @tomato;
+    font-size: 11px;
+    position: absolute;
+    top: 32px
+  }
+}
+
