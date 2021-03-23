@@ -1,6 +1,5 @@
 // import './chat.js'
 const nunjucks = require('nunjucks')
+nunjucks.configure({ autoescape: true });
 
-const render = nunjucks.render('ХУЙ', { foo: 'baristtaaaaa' });
 
-// document.querySelector('.test').insertAdjacentHTML('beforeend', render)

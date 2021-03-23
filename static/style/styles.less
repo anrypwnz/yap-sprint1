@@ -39,7 +39,7 @@ button {
 
 .root {
   max-width: 1280px;
-  min-height: 80vh;
+  min-height: 97vh;
   display: flex;
   justify-content: center;
   margin: auto;
@@ -190,6 +190,7 @@ button {
     flex-flow: column;
     align-items: flex-start;
     min-width: 200px;
+    padding: 12px;
     position: absolute;
     top: 55px;
     right: 0;
@@ -339,7 +340,7 @@ button {
   }
 }
 
-//login-page > form
+// login-page.html > form
 .form {
   display: flex;
   justify-content: center;
@@ -393,7 +394,14 @@ button {
       color: @lightblue;
       margin-top: 20px;
     }
+
+    &-cancel {
+      background-color: @tomato;
+      border-radius: 8px;
+      padding: 12px;
+    }
   }
+
   &-error {
     color: @tomato;
     font-size: 11px;
@@ -402,3 +410,100 @@ button {
   }
 }
 
+// user-info.html
+.sidebar-back {
+  border-right: 1px solid @lightblue;
+  display: flex;
+  align-items: center;
+  padding: 18px;
+
+  &__btn {
+    cursor: pointer;
+  }
+}
+
+.profile {
+  &-content {
+    width: 100%;
+    padding: 60px;
+  }
+
+  &-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: @darkblue;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    margin-bottom: 40px;
+  }
+
+  &-title {
+    margin-bottom: 40px;
+  }
+
+  &-form-wrap {
+    border: 0;
+  }
+
+  &-form {
+    align-items: center;
+    max-width: 510px;
+  }
+
+  &-form-group {
+    margin-bottom: 20px;
+  }
+
+  &-form-input {
+    text-align: right;
+    color: @gray;
+  }
+
+  &-form-label {
+    font-size: 13px;
+    top: 6px;
+    color: @font-color;
+  }
+
+  &-btn {
+    width: 50%;
+    margin-top: 30px;
+  }
+}
+
+// модальное окно
+.modal {
+  // TODO значально display none
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 6;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+
+  &__content {
+    background-color: @darkblue;
+    border: 1px solid @lightgray;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    padding: 40px;
+    border-radius: 8px;
+  }
+  &__link {
+    color: @lightblue;
+    font-size: 12px;
+    text-decoration: @lightblue underline;
+    cursor: pointer;
+    margin: 20px 0;
+  }
+
+}
