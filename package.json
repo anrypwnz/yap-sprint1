@@ -9,8 +9,10 @@
   "scripts": {
     "start": "npm run clear && parcel build ./static/*.html --no-source-maps --no-cache --public-url ./ && node ./app.js",
     "dev": "npm run clear && parcel ./static/*.html",
+    "develop": "nodemon -e js,html,less app.js",
     "build": "npm run clear && parcel build ./static/*.html --no-source-maps --no-cache --public-url ./",
-    "clear": "rm -rf dist .cache"
+    "clear": "rm -rf dist .cache",
+    "deploy": "git subtree push --prefix dist origin deploy"
   },
   "repository": {
     "type": "git",

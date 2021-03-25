@@ -1,6 +1,7 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 const path = require('path');
+
 const data = require('./static/testData');
 console.log(data);
 const app = express();
